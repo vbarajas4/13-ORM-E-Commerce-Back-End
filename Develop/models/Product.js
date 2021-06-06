@@ -36,9 +36,11 @@ Product.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
-      //tbd Reference see activity 23 -26
+      references: {
+        model: 'category',
+        key: 'id'
+      },
     }
-    
   },
   {
     sequelize,
