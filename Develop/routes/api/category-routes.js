@@ -3,11 +3,10 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
-//router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
 
-  //example set up from activity mini project, refactor to my model, ?DO I NOT DO a include model and attribute for findALL
+  
   router.get('/', async (req, res) => {
     try {
       const categoryData = await Category.findAll({
@@ -20,9 +19,9 @@ const { Category, Product } = require('../../models');
       res.status(500).json(err);
     }
   });
-//});
 
-//router.get('/:id', (req, res) => {
+
+
   // find one category by its `id` value
   // be sure to include its associated Products
 
@@ -44,9 +43,7 @@ const { Category, Product } = require('../../models');
     }
   });
 
-//});
 
-//router.post('/', (req, res) => {
   // create a new category
 
   router.post('/', async (req, res) => {
@@ -57,9 +54,8 @@ const { Category, Product } = require('../../models');
       res.status(400).json(err);
     }
   });
-//});
 
-//
+
   // update a category by its `id` value
    router.put('/:id', async (req, res) => {
       try {
@@ -71,7 +67,7 @@ const { Category, Product } = require('../../models');
     }
   });
 
-//router.delete('/:id', (req, res) => {
+
   // delete a category by its `id` value
 
   router.delete('/:id', async (req, res) => {
@@ -92,6 +88,5 @@ const { Category, Product } = require('../../models');
       res.status(500).json(err);
     }
   });
-//});
 
 module.exports = router;
